@@ -3,7 +3,7 @@
       <h1 class="text-xl text-indigo-700 font-black leading-none">
         John Smith University
       </h1>
-      <a class="absolute top-0 right-0 mt-1 mr-1 bg-gray-500 hover:bg-red-700 text-white py-0 px-2 rounded" href="<%= Routes.page_path(@conn, :index) %>">x</a>
+      <a class="absolute top-0 right-0 -mt-3 -mr-3 text-gray-500 hover:text-red-700" href="<%= Routes.page_path(@conn, :index) %>"><i class="fas fa-times-circle fa-2x"></i></a>
       <span class="text-indigo-700 text-xs leading-none">Toronto, CA</span>
       <div class="mb-4 mt-4">
         <%= label f, :email, "Email", class: "block text-gray-500 text-sm font-bold" %>
