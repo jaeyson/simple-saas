@@ -1,4 +1,4 @@
-# PowApp
+# Simple-SaaS
 
 To start your Phoenix server:
 
