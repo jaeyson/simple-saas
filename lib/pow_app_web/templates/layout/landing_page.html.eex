@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <%= csrf_meta_tag() %>
+    <title>Cozee &middot; Coworking made easy</title>
+    <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+    <style>
+      nav {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg relative w-full h-screen bg-indigo-800">
+    <nav class="container fixed z-5 flex items-center justify-between flex-wrap bg-transparent p-3">
+      <div class="flex items-center flex-shrink-0 text-white mr-6">
+        <span class="font-semibold text-xl tracking-tight">Cozee</span>
+      </div>
+      <div class="block lg:hidden">
+        <button class="flex items-center px-3 py-2 border rounded hover:text-white hover:border-white">
+          <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+          </svg>
+        </button>
+      </div>
+      <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+        <div class="text-sm lg:flex-grow">
+          <a href="#responsive-header"
+            class="block px-4 py-1 rounded lg:inline-block lg:mt-0 text-purple-200 hover:bg-indigo-900 hover:text-white mr-4">
+            Docs
+          </a>
+          <a href="#responsive-header"
+            class="block px-4 py-1 rounded lg:inline-block lg:mt-0 text-purple-200 hover:bg-indigo-900 hover:text-white mr-4">
+            Examples
+          </a>
+          <a href="#responsive-header"
+            class="block px-4 py-1 rounded lg:inline-block lg:mt-0 text-purple-200 hover:bg-indigo-900 hover:text-white mr-4">
+            Blog
+          </a>
+        </div>
+        <div>
+          <a href="<%= Routes.login_path(@conn, :new) %>"
+            class="inline-block text-sm px-4 py-2
+            leading-none font-bold rounded text-white border-white
+            hover:border-transparent hover:text-white
+            hover:bg-indigo-900 mt-4 lg:mt-0">Sign in</a>
+          <a href="<%= Routes.signup_path(@conn, :new) %>"
+            class="inline-block text-sm px-4 py-2
+            leading-none font-bold rounded text-white border-white
+            hover:border-transparent hover:text-white
+            hover:bg-indigo-900 mt-4 lg:mt-0">Register</a>
+        </div>
+      </div>
+    </nav>
+    <header class="flex justify-around pt-48" >
+      <div class="break-words text-white">
+      <h1 class="text-6xl font-black">
+        Need some space?
+      </h1>
+      <h2 class="text-2xl max-w-lg pb-10">
+        10 Reasons why you should work from a coworking space
+      </h2>
+      <a href="<%= Routes.signup_path(@conn, :new) %>" class="text-lg mx-3 bg-orange-500 hover:bg-orange-600 text-white py-5 px-5 rounded shadow-xl">
+        Try our app for FREE
+      </a>
+      <a href="<%= Routes.signup_path(@conn, :new) %>" class="text-lg mx-3 bg-white hover:bg-gray-200 text-orange-600 py-5 px-5 rounded shadow-xl">
+        Watch a demo
+      </a>
+      </div>
+      <img class="max-w-md" src="/images/undraw_shared_workspace_hwky.svg" alt="A lady and a guy in a shared workspace">
+    </header>
+    </div>
+    <main role="main">
+      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+      <%= render @view_module, @view_template, assigns %>
+    </main>
+    <footer class="bg-indigo-700">
+      <div class="container py-5 mx-auto">
+        <div class="flex justify-center text-center text-white">
+          <a href="#" class="hover:text-purple-200">
+            <i class="fab fa-twitter fa-2x px-4"></i>
+          </a>
+          <a href="#" class="hover:text-purple-200">
+            <i class="fab fa-facebook-square fa-2x px-4"></i>
+          </a>
+          <a href="#" class="hover:text-purple-200">
+            <i class="fab fa-youtube fa-2x px-4"></i>
+          </a>
+          <a href="#" class="hover:text-purple-200">
+            <i class="fab fa-dribbble fa-2x px-4"></i>
+          </a>
+          <a href="#" class="hover:text-purple-200">
+            <i class="fab fa-behance fa-2x px-4"></i>
+          </a>
+        </div>
+        <h1 class="pt-10 text-xs text-white text-center">&copy;2020 jaeyson.dev</h1>
+      </div>
+    </footer>
+    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+  </body>
+</html>
+
