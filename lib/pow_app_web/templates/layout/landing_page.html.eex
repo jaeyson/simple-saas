@@ -115,9 +115,9 @@
       let nav = document.getElementsByTagName("nav")[0];
       let brand = document.getElementById("cozee-brand");
       let cozee = document.getElementsByClassName("cozee");
-      let classModify = (elems, old, new) => {
+      let classModify = (elems, oldClass, newClass) => {
         for (const elem of elems) {
-          elem.classList.replace(old, new);
+          elem.classList.replace(oldClass, newClass);
         }
       };
 
