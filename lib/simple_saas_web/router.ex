@@ -19,6 +19,10 @@ defmodule SimpleSaasWeb.Router do
       error_handler: Pow.Phoenix.PlugErrorHandler
   end
 
+  pipeline :landing_page do
+    plug :put_layout, {SimpleSaasWeb.LayoutView, "landing_page.html"}
+  end
+
   scope "/" do
     pipe_through :browser
 
@@ -34,6 +38,7 @@ defmodule SimpleSaasWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/app", PageController, :app
   end
 
   # Other scopes may use custom stacks.
