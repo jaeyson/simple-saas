@@ -42,5 +42,6 @@ defmodule SimpleSaasWeb.Endpoint do
     key: "_simple_saas_key",
     signing_salt: "C6riVI5p"
 
+  plug Pow.Plug.Session, otp_app: :simple_saas
   plug SimpleSaasWeb.Router
 end
