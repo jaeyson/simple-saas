@@ -10,6 +10,10 @@ use Mix.Config
 config :simple_saas,
   ecto_repos: [SimpleSaas.Repo]
 
+config :simple_saas, :pow,
+  user: SimpleSaas.Users.User,
+  repo: SimpleSaas.Repo
+
 # Configures the endpoint
 config :simple_saas, SimpleSaasWeb.Endpoint,
   url: [host: "localhost"],
