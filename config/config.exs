@@ -12,7 +12,8 @@ config :simple_saas,
 
 config :simple_saas, :pow,
   user: SimpleSaas.Users.User,
-  repo: SimpleSaas.Repo
+  repo: SimpleSaas.Repo,
+  web_module: SimpleSaasWeb
 
 # Configures the endpoint
 config :simple_saas, SimpleSaasWeb.Endpoint,
