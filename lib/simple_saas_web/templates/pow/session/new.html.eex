@@ -19,20 +19,18 @@
 
     <div class="mb-2">
       <%= label f, :password, class: "block text-gray-600 text-sm font-bold" %>
-      <%= password_input f, :password, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
+      <%= password_input f, :password, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
       <%= error_tag f, :password %>
     </div>
 
-    <!--
     <div class="mb-2">
       <%= checkbox f, :persistent_session %>
       <%= label f, :persistent_session, "Remember me", class: "pl-2 text-gray-600 text-sm font-bold" %>
     </div>
-    -->
 
     <div class="flex items-center justify-between">
       <%= submit "Log in", class: "shadow bg-indigo-700 hover:bg-indigo-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
-      <%= link "Forgot Password?", to: Routes.page_path(@conn, :index), class: "inline-block align-baseline font-bold text-sm text-gray-600 hover:text-indigo-700" %>
+      <%= link "Forgot Password?", to: Routes.pow_reset_password_reset_password_path(@conn, :new), class: "inline-block align-baseline font-bold text-sm text-gray-600 hover:text-indigo-700" %>
     </div>
 
     <hr class="mt-3">

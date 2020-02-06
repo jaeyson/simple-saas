@@ -13,7 +13,16 @@ config :simple_saas,
 config :simple_saas, :pow,
   user: SimpleSaas.Users.User,
   repo: SimpleSaas.Repo,
-  web_module: SimpleSaasWeb
+  web_module: SimpleSaasWeb,
+  web_mailer_module: SimpleSaasWeb,
+  extensions: [PowEmailConfirmation, PowResetPassword, PowPersistentSession],
+  controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks,
+  mailer_backend: SimpleSaasWeb.Pow.Mailer
+
+config :simple_saas, SimpleSaasWeb.Pow.Mailer,
+  adapter: Swoosh.Adapters.Mailgun,
+  api_key: System.get_env("MAILGUN_API"),
+  domain: System.get_env("MAILGUN_DOMAIN")
 
 # Configures the endpoint
 config :simple_saas, SimpleSaasWeb.Endpoint,

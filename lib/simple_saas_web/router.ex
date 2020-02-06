@@ -1,6 +1,8 @@
 defmodule SimpleSaasWeb.Router do
   use SimpleSaasWeb, :router
   use Pow.Phoenix.Router
+  use Pow.Extension.Phoenix.Router,
+    extensions: [PowResetPassword, PowEmailConfirmation]
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -27,6 +29,7 @@ defmodule SimpleSaasWeb.Router do
     pipe_through :browser
 
     pow_routes()
+    pow_extension_routes()
   end
 
   scope "/", SimpleSaasWeb do

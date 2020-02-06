@@ -43,5 +43,6 @@ defmodule SimpleSaasWeb.Endpoint do
     signing_salt: "C6riVI5p"
 
   plug Pow.Plug.Session, otp_app: :simple_saas
+  plug PowPersistentSession.Plug.Cookie
   plug SimpleSaasWeb.Router
 end
