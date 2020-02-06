@@ -35,13 +35,13 @@ defmodule SimpleSaasWeb.Router do
   scope "/", SimpleSaasWeb do
     pipe_through [:browser, :protected]
 
+    get "/app", PageController, :app
   end
 
   scope "/", SimpleSaasWeb do
     pipe_through :browser
 
     get "/", PageController, :index
-    get "/app", PageController, :app
   end
 
   # Other scopes may use custom stacks.

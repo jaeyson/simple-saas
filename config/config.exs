@@ -17,7 +17,9 @@ config :simple_saas, :pow,
   web_mailer_module: SimpleSaasWeb,
   extensions: [PowEmailConfirmation, PowResetPassword, PowPersistentSession],
   controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks,
-  mailer_backend: SimpleSaasWeb.Pow.Mailer
+  mailer_backend: SimpleSaasWeb.Pow.Mailer,
+  routes_backend: SimpleSaasWeb.Pow.Routes,
+  messages_backend: SimpleSaasWeb.Pow.Messages
 
 config :simple_saas, SimpleSaasWeb.Pow.Mailer,
   adapter: Swoosh.Adapters.Mailgun,
