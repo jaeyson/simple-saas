@@ -13,11 +13,16 @@ config :pow_app,
 config :pow_app, :pow,
   user: PowApp.Users.User,
   repo: PowApp.Repo,
-  extensions: [PowResetPassword, PowEmailConfirmation],
+  extensions: [PowEmailConfirmation, PowResetPassword],
   controller_callbacks: Pow.Extension.Phoenix.ControllerCallbacks,
   mailer_backend: PowAppWeb.PowMailer,
   web_mailer_module: PowAppWeb,
   web_module: PowAppWeb
+
+config :pow_app, PowAppWeb.PowMailer,
+  adapter: Swoosh.Adapters.Mailgun,
+  api_key: System.get_env("MAILGUN_API"),
+  domain: "jaeyson.com"
 
 # Configures the endpoint
 config :pow_app, PowAppWeb.Endpoint,
@@ -25,7 +30,7 @@ config :pow_app, PowAppWeb.Endpoint,
   secret_key_base: "ZrKBFFL495T2MOZLtmLPb49G9SKZ8IqzAxo7Aj0hAjQtygwcxrQaBjj4FsZiJVn0",
   render_errors: [view: PowAppWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: PowApp.PubSub, adapter: Phoenix.PubSub.PG2],
-  live_view: [ signing_salt: "L5Ws4HxLE+UJrGzJcJoo0lddyzWfIulG" ]
+  live_view: [signing_salt: "L5Ws4HxLE+UJrGzJcJoo0lddyzWfIulG"]
 
 # Configures Elixir's Logger
 config :logger, :console,

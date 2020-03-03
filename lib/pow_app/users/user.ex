@@ -1,8 +1,9 @@
 defmodule PowApp.Users.User do
   use Ecto.Schema
   use Pow.Ecto.Schema
+
   use Pow.Extension.Ecto.Schema,
-    extensions: [PowResetPassword, PowEmailConfirmation]
+    extensions: [PowEmailConfirmation, PowResetPassword]
 
   schema "users" do
     pow_user_fields()

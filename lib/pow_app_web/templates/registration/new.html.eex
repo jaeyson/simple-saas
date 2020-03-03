@@ -1,39 +1,39 @@
-  <div class="relative container mt-20 mx-auto w-full max-w-xs">
-    <%= form_for @changeset, Routes.signup_path(@conn, :create), [class: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"], fn f -> %>
-      <h1 class="text-xl text-indigo-700 font-black leading-none">
-        John Smith University
-      </h1>
-      <a class="absolute top-0 right-0 -mt-3 -mr-3 text-gray-500 hover:text-red-700" href="<%= Routes.page_path(@conn, :index) %>"><i class="fas fa-times-circle fa-2x"></i></a>
-      <span class="text-indigo-700 text-xs leading-none">Toronto, CA</span>
-      <div class="mb-4 mt-4">
-        <%= label f, :email, "Email", class: "block text-gray-500 text-sm font-bold" %>
-        <%= email_input f, :email, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
-        <%= error_tag f, :email %>
-      </div>
+<div class="relative container mt-20 mx-auto w-full max-w-xs">
+  <%= form_for @changeset, Routes.signup_path(@conn, :create), [class: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"], fn f -> %>
+    <h1 class="text-xl text-indigo-700 font-black leading-none">
+      John Smith University
+    </h1>
+    <a class="absolute top-0 right-0 -mt-3 -mr-3 text-gray-500 hover:text-red-700" href="<%= Routes.page_path(@conn, :index) %>"><i class="fas fa-times-circle fa-2x"></i></a>
+    <span class="text-indigo-700 text-xs leading-none">Toronto, CA</span>
+    <div class="mb-4 mt-4">
+      <%= label f, :email, "Email", class: "block text-gray-500 text-sm font-bold" %>
+      <%= email_input f, :email, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      <%= error_tag f, :email %>
+    </div>
 
-      <div class="mb-2">
-        <%= label f, :password, "Password", class: "block text-gray-500 text-sm font-bold" %>
-        <%= password_input f, :password, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
-        <%= error_tag f, :password %>
-      </div>
+    <div class="mb-2">
+      <%= label f, :password, "Password", class: "block text-gray-500 text-sm font-bold" %>
+      <%= password_input f, :password, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
+      <%= error_tag f, :password %>
+    </div>
 
-      <%= label f, :confirm_password, "Confirm password", class: "block text-gray-500 text-sm font-bold" %>
-      <%= password_input f, :confirm_password, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
-      <%= error_tag f, :confirm_password %>
+    <%= label f, :confirm_password, "Confirm password", class: "block text-gray-500 text-sm font-bold" %>
+    <%= password_input f, :confirm_password, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
+    <%= error_tag f, :confirm_password %>
 
-      <div class="flex items-center justify-between">
-        <%= submit "Sign up", class: "shadow bg-indigo-700 hover:bg-indigo-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
-        <a class="inline-block align-baseline font-bold text-sm text-gray-500 hover:text-indigo-700" href="<%= Routes.page_path(@conn, :index) %>">
-          Forgot Password?
-        </a>
-      </div>
-      <hr class="mt-3">
-      <a href="<%= Routes.login_path(@conn, :new) %>" class="mt-3 block text-base text-indigo-700 hover:bg-indigo-700 hover:text-white rounded pt-2 pb-2 focus:shadow-outline hover:shadow text-bold text-center">
-        Already registered? Login here
+    <div class="flex items-center justify-between">
+      <%= submit "Sign up", class: "shadow bg-indigo-700 hover:bg-indigo-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+      <a class="inline-block align-baseline font-bold text-sm text-gray-500 hover:text-indigo-700" href="<%= Routes.page_path(@conn, :index) %>">
+        Forgot Password?
       </a>
-    <% end %>
-    <p class="text-center text-gray-500 text-xs">
-      &copy;2020 jaeyson.dev &middot; All rights reserved.
-    </p>
-  </div>
+    </div>
+    <hr class="mt-3">
+    <a href="<%= Routes.login_path(@conn, :new) %>" class="mt-3 block text-gray-600 hover:bg-indigo-700 hover:text-white rounded pt-2 pb-2 focus:shadow-outline hover:shadow text-bold text-center">
+      Already registered? Login here
+    </a>
+  <% end %>
+  <p class="text-center text-gray-500 text-xs">
+    &copy;2020 jaeyson.dev &middot; All rights reserved.
+  </p>
+</div>
 

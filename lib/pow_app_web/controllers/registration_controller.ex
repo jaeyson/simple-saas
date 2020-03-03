@@ -5,9 +5,9 @@ defmodule PowAppWeb.RegistrationController do
     # We'll leverage [`Pow.Plug`](Pow.Plug.html), but you can also follow the classic Phoenix way:
     # changeset = MyApp.Users.User.changeset(%MyApp.Users.User{}, %{})
 
-    changeset = PowApp.Users.User.changeset(%PowApp.Users.User{}, %{})
+    # changeset = PowApp.Users.User.changeset(%PowApp.Users.User{}, %{})
 
-    # changeset = Pow.Plug.change_user(conn)
+    changeset = Pow.Plug.change_user(conn)
 
     render(conn, "new.html", changeset: changeset)
   end

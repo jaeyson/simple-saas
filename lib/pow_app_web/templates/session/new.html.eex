@@ -1,7 +1,29 @@
-<h1>Log in</h1>
+<div class="relative container mt-20 mx-auto w-full max-w-xs">
+  <%= form_for @changeset, Routes.login_path(@conn, :create), [class: "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"], fn f -> %>
+    <h1 class="text-xl text-indigo-700 font-black leading-none">
+      John Smith University
+    </h1>
+    <a class="absolute top-0 right-0 -mt-3 -mr-3 text-gray-500 hover:text-red-700" href="<%= Routes.page_path(@conn, :index) %>"><i class="fas fa-times-circle fa-2x"></i></a>
+    <span class="text-indigo-700 text-xs leading-none">Toronto, CA</span>
 
-<%= form_for @changeset, Routes.login_path(@conn, :create), fn f -> %>
-  <%= text_input f, :email %>
-  <%= password_input f, :password %>
-  <%= submit "Log in" %>
-<% end %>
+    <div class="mb-4 mt-4">
+      <%= label f, :email, "Email", class: "block text-gray-600 text-sm font-bold" %>
+      <%= text_input f, :email, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+
+    <div class="mb-2">
+      <%= label f, :password, "Password", class: "block text-gray-600 text-sm font-bold" %>
+      <%= password_input f, :password, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+    <div class="flex items-center justify-between">
+      <%= submit "Log in", class: "shadow bg-indigo-700 hover:bg-indigo-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+      <a class="inline-block align-baseline font-bold text-sm text-gray-600 hover:text-indigo-700" href="<%= Routes.page_path(@conn, :index) %>">Forgot Password?</a>
+    </div>
+    <hr class="mt-3">
+    <a href="<%= Routes.signup_path(@conn, :new) %>" class="mt-3 block text-base text-gray-600 hover:bg-indigo-700 hover:text-white rounded pt-2 pb-2 focus:shadow-outline hover:shadow text-bold text-center">New user? register here</a>
+  <% end %>
+  <p class="text-center text-gray-600 text-sm">
+    &copy;2020 jaeyson.dev &middot; All rights reserved.
+  </p>
+</div>
+

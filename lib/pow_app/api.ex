@@ -28,4 +28,3 @@ defmodule PowApp.Api do
   defp stringify([]), do: "no holiday :("
   defp stringify([%{"name" => name}] = _selected_holiday), do: name
 end
-

@@ -13,10 +13,6 @@ config :pow_app, PowAppWeb.Endpoint,
   url: [host: "example.com", port: 80],
   cache_static_manifest: "priv/static/cache_manifest.json"
 
-config :pow_app, PowAppWeb.PowMailer,
-  adapter: Bamboo.MailgunAdapter,
-  api_key: System.get_env("MAILGUN_API")
-
 # Do not print debug messages in production
 config :logger, level: :info
 

@@ -1,6 +1,7 @@
 defmodule PowAppWeb.Router do
   use PowAppWeb, :router
   use Pow.Phoenix.Router
+
   use Pow.Extension.Phoenix.Router,
     extensions: [PowEmailConfirmation, PowResetPassword]
 

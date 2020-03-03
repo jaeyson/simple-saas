@@ -46,7 +46,7 @@ defmodule PowApp.MixProject do
       {:jason, "~> 1.0"},
       {:pow, "~> 1.0.16"},
       {:httpoison, "~> 1.6"},
-      {:bamboo, "~> 1.4"},
+      {:swoosh, "~> 0.24.4"},
       {:plug_cowboy, "~> 2.0"}
     ]
   end
