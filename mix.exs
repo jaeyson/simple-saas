@@ -44,7 +44,7 @@ defmodule SimpleSaas.MixProject do
       {:jason, "~> 1.0"},
       {:pow, "~> 1.0.16"},
       {:httpoison, "~> 1.6"},
-      {:swoosh, "~> 0.25.4"},
+      {:swoosh, "~> 1.0.0"},
       {:identicode, github: "jaeyson/identicode"},
       {:plug_cowboy, "~> 2.0"}
     ]
